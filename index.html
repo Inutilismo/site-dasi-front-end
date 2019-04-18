@@ -3,6 +3,22 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="css.css" />
 		<title>Sanitas Tua</title>
+		
+		<script>		
+				
+		function mostra(elemento) 
+		{
+			var display = document.getElementById(elemento).style.display;
+			
+			if(display == "none")
+				document.getElementById(elemento).style.display = 'block';
+			else
+				document.getElementById(elemento).style.display = 'none';
+		}
+	
+		</script>
+		
+		
 
 	</head>
 
@@ -31,9 +47,8 @@
 		<!--Começo do bloco de conteúdo-->
 		<div class="contentTop"></div>
 		<div class="contentMain"> 
-				<h1>O que é a febre amarela?</h1>
-                <p>A febre amarela é uma doença infecciosa causada por um vírus e transmitida pela picada de um mosquito infectado, então não há possibilidade de contágio direta de pessoa para pessoa. Sendo que os responsáveis pela contaminação em áreas rurais e de floresta são dos gêneros Haemagogus e Sabethes, os principais na América Latina, já no meio urbano o Aedes aegypti faz o papel de transmissor (o mesmo da dengue, chikungunya e zika).</p>                                                  
-                        <br />
+			<h1>O que é a febre amarela?</h1>
+               <p>A febre amarela é uma doença infecciosa causada por um vírus e transmitida pela picada de um mosquito infectado, então não há possibilidade de contágio direta de pessoa para pessoa. Sendo que os responsáveis pela contaminação em áreas rurais e de floresta são dos gêneros Haemagogus e Sabethes, os principais na América Latina, já no meio urbano o Aedes aegypti faz o papel de transmissor (o mesmo da dengue, chikungunya e zika).</p>                                                                 
 		</div>
 		<div class="contentBottom"></div>
 		<!--Fim do bloco de conteúdo-->
@@ -41,22 +56,21 @@
 		<!--Começo do bloco de conteúdo-->
 		<div class="contentTop"></div>
 		<div class="contentMain"> 
-            <h1>Ciclo</h1>
-            <strong><p>Silvestre</p></strong><br>
+            <h1>Ciclo silvestre</h1>            
 			<p>Os macacos são hospedeiros do vírus, que através da picada dos mosquitos contamina pessoas não vacinadas que entrem no seu habitat natural ou outros macacos. Esses insetos agem durante o período mais quente do dia (normalmente entre às 9h e 16h) e se aglomeram nas copas das árvores ou perto do solo. Portanto, a morte de primatas indica que o vírus da doença está circulando em determinada região.</p><br />          
+			<p onclick="mostra('macaco')" style="cursor:hand"><strong>Curiosidade sobre os macacos (Clique aqui)</strong></p>			
 		</div>	 
 		<div class="contentBottom"></div>	 
 		<!--Fim do bloco de conteúdo-->
   
-  
-		<img src="febre-macaco.jpg" alt="" /><br />
+		
+		<img src="febre-macaco.jpg" alt="" id="macaco" style="display:none"></><br />
     
 	
 		<!--Começo do bloco de conteúdo-->
 		<div class="contentTop"></div>
 		<div class="contentMain"> 
-            <h1>Ciclo</h1>
-            <strong><p>Urbana</p></strong><br>				
+            <h1>Ciclo urbano</h1>           				
 			<p>O mosquito nesse caso é doméstico, vivendo próximo do indivíduo e alimenta-se de sangue humano especialmente ao amanhecer e ao entardecer. Os macacos não participam da transmissão, ela ocorre somente quando o Aedes aegypti pica uma pessoa doente(adquirindo o vírus) e depois alguém saudável e não vacinado.</p><br />           
 		</div>
 		<div class="contentBottom"></div>
@@ -67,21 +81,14 @@
 		<div class="contentTop"></div>
 		<div class="contentMain"> 
             <h1>Sintomas</h1>        			
-			<ul>
-				<li>Dores no corpo em geral;</li>
-				<li>Calafrios;</li>
-				<li>Dor de cabeça intensa;</li>
-				<li>Náuseas e vômitos;</li>
-				<li>Dores nas costas;</li>
-				<li>Início súbito de febre;</li>
-				<li>Fadiga e fraqueza.</li>
-			</ul>
-				
+			
 			<br />
 			
-			<strong><p> Em casos graves: </p></strong>
+			<img src="sintomas.jpg" alt="" height="450px" width="450px"/><br />
 			
-			<ul>
+			<strong><p onclick="mostra('graves')" style="cursor:hand"> Em casos graves: (Clique aqui) </p></strong>
+			
+			<ul id="graves" style="display:none">
 				<li>Febre alta;</li>
 				<li>Icterícia (coloração amarelada da pele e do branco dos olhos);</li>
 				<li>Hemorragia (especialmente a partir do trato gastrointestinal);</li>
@@ -91,7 +98,7 @@
 		<div class="contentBottom"></div>
 		<!--Fim do bloco de conteúdo-->
 	
-		<img src="sintomas.jpg" alt="" /><br />
+		
 
 
 		<!--Começo do bloco de conteúdo-->
@@ -122,12 +129,15 @@
 				<li>Hemorragia (especialmente a partir do trato gastrointestinal);</li>
 				<li>Eventualmente, choque e insuficiência de múltiplos órgãos.</li>				
 				</ul>
+				<br />
+				<p onclick="mostra('prevencao1')" style="cursor:hand"><strong>Mais sobre os modos de prevenção (Clique aqui)</strong></p>
+				
 		</div>
 		<div class="contentBottom"></div>
 		<!--Fim do bloco de conteúdo-->
 
 
-		<img src="prevenir.jpg" alt="" height="800px" width="600px" /><br />
+		<img src="prevenir.jpg" alt="" height="800px" width="600px" id="prevencao1" style="display:none" /><br />
 		
 		<p> Fonte(s): <a href="http://portalms.saude.gov.br/saude-de-a-z/febre-amarela-sintomas-transmissao-e-prevencao#transmissao">http://portalms.saude.gov.br</a> <br /> <a href="http://www.ans.gov.br/prevencao-e-combate/combate-ao-mosquito-aedes-aegypti">http://www.ans.gov.br</a> </p>
 			
@@ -139,14 +149,14 @@
 			
 			<p>
 			
-			<h1>Viu casos suspeitos de febre amarela?</h1><br />
+			<h1 style="font-size:17px;" >Viu casos suspeitos de febre amarela?</h1><br />
 			
-			Caso tenha conhecimento da morte de macacos ou de humanos que tenham apresentado sintomas comuns aos de febre amarela comunique o mais possível às autoridades locais competentes por qualquer meio: telefone, email, fax, etc. Às autoridades estaduais de saúde cabe notificar os eventos de febre amarela suspeitos ao Ministério da Saúde.
-			<br />
+			<p>Caso tenha conhecimento da morte de macacos ou de humanos que tenham apresentado sintomas comuns aos de febre amarela comunique o mais possível às autoridades locais competentes por qualquer meio: telefone, email, fax, etc. Às autoridades estaduais de saúde cabe notificar os eventos de febre amarela suspeitos ao Ministério da Saúde.</p>
 			<p>
-			<h1>Focos de proliferação do Aedes aegypti</h1><br />
+			<br />
+			<h1 style="font-size:17px;" >Focos de proliferação do Aedes aegypti</h1><br />
 			
-			Mobilize sua família e vizinhos para combater ambientes que concentrem água parada! <br /> Caso os criadouros se localizem em áreas inacessíveis contate a Secretaria Municipal de Saúde de sua cidade
+			<p>Mobilize sua família e vizinhos para combater ambientes que concentrem água parada! <br /> Caso os criadouros se localizem em áreas inacessíveis contate a Secretaria Municipal de Saúde de sua cidade</p>
 			<br /><a href="http://www.saude.sp.gov.br/ses/sites-de-interesse/secretarias-estaduais-e-municipais-de-saude">Sites das secretarias estaduais e municipais de saúde</a>
 			
 			</p><br />
