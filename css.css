@@ -147,14 +147,7 @@ font-weight:bold;
 color:#071027;
 }
 
-#site #navBottom{
-clear:both;
-width:419px;
-height:20px;
-background-image:url(tab_bottom.png);
-background-repeat:no-repeat;
-float:left;
-}
+
 
 .contentTitle
 {
