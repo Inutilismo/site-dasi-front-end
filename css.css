@@ -82,7 +82,7 @@ font-family:Arial, Helvetica, sans-serif;
 
 
 
-#menu
+#site
 {
 clear:both;
 position:relative;
@@ -92,7 +92,7 @@ margin-left:50px;
 width:1250px;
 }
 
-#menu .navColumn
+#site .navColumn
 {
 margin-left:0px;
 width:419px;
@@ -101,7 +101,7 @@ background-repeat:repeat-y;
 float:left;
 }
 
-#menu .navColumn .overview
+#site .navColumn .overview
 {
 width:350px;
 padding:5px;
@@ -112,7 +112,7 @@ margin-top:10px;
 }
 
 
-#menu .navColumn .link
+#site .navColumn .link
 {
 width:369px;
 height:65px;
@@ -125,7 +125,7 @@ padding-left:50px;
 }
 
 
-#menu .conteudo
+#site .conteudo
 {
 float:left;
 margin-left:0px;
@@ -191,7 +191,7 @@ margin-left:25px;
 }
 
 
-#menu #navBottom{
+#site #navBottom{
 clear:both;
 width:419px;
 height:20px;
