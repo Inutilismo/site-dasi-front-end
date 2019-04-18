@@ -101,16 +101,6 @@ background-repeat:repeat-y;
 float:left;
 }
 
-#site .navColumn .overview
-{
-width:350px;
-padding:5px;
-background-color:#F9FAF5;
-border:dashed 2px;
-border-color:#EAECC7;
-margin-top:10px;
-}
-
 
 #site .navColumn .link
 {
@@ -182,13 +172,7 @@ color:#ffffff;
 }
 
 
-.comments
-{
-font-size:11px;
-font-style:italic;
-padding:10px;
-margin-left:25px;
-}
+
 
 
 #site #navBottom{
