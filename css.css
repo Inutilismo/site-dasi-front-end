@@ -15,20 +15,10 @@ body {
 	background-repeat:repeat-x;
 }
 
-.rodape {
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #ffffff;
-}
-
 *
 {
   margin: 0 auto 0 auto;
  text-align:left;}
-
 
 #cabecalho
 {
@@ -80,8 +70,6 @@ font-weight:bold;
 font-family:Arial, Helvetica, sans-serif;
 }
 
-
-
 #site
 {
 clear:both;
@@ -101,7 +89,6 @@ background-repeat:repeat-y;
 float:left;
 }
 
-
 #site .navColumn .link
 {
 width:369px;
@@ -109,11 +96,10 @@ height:65px;
 line-height:65px;
 font:Arial, Helvetica, sans-serif;
 font-size:20px;
-background-image:url(arrow_link_background.png);
+background-image:url(background.png);
 background-repeat:no-repeat;
 padding-left:50px;
 }
-
 
 #site .conteudo
 {
@@ -121,7 +107,6 @@ float:left;
 margin-left:0px;
 width:550px;
 }
-
 
 .contentTop
 {
@@ -162,19 +147,6 @@ font-weight:bold;
 color:#071027;
 }
 
-.footer h1
-{
-margin-left:21px;
-font-size:15px;
-line-height:normal;
-margin-bottom:10px;
-color:#ffffff;
-}
-
-
-
-
-
 #site #navBottom{
 clear:both;
 width:419px;
@@ -204,7 +176,6 @@ font-weight:bold;
 color:#071027;
 }
 
-
 .contentText
 {
 width:680px;
@@ -213,17 +184,6 @@ padding-right:30px;
 font-size:13px;
 color:#030712;
 line-height:30px;
-}
-
-
-#footer {
-width: 750px;
-height:49px;
-background: url(footer.png) no-repeat;
-text-align:center;
-font-size:9px;
-color:#223F8D;
-padding-top:36px;
 }
 
 h4
@@ -243,8 +203,14 @@ p {text-align: left;}
 
 
 
-
-
+.rodape {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #ffffff;
+}
 
 
 .footer-basic-centered{
