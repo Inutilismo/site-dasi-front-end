@@ -38,7 +38,7 @@
 		<div class="navColumn">
 			<div class="visao-geral">
         	Nesta matéria trazemos para você, morador de São Paulo, informações muito importantes sobre a febre amarela, doença que está atingindo muitos paulistas e que pode ser evitada por meio de medidas simples.      </div>
-			<div class="link"><a href="#">Início</a></div>
+			<div class="link"><a href=index.html>Início</a></div>
 			<div class="link"><a href="#">Sobre nós</a></div>
 			<div class="link"><a href="#">Notícias</a></div>
 			<div class="link"><a href="#">Fale Conosco</a></div>
@@ -159,7 +159,7 @@
 
 		<!--Começo do rodapé-->
 		<footer class="rodape2">
-		<div class="rodape">
+		<div class="rodape" data-anime="bottom">
 			<p class="logo">Sanitas Tua</p><br />
 
 			<p>
@@ -177,7 +177,7 @@
 			</p><br />
 
 			<p class="links">
-				<a href="#">Início</a>
+				<a href=index.html>Início</a>
 				·
 				<a href="#">Sobre Nós</a>
 				·
@@ -209,13 +209,15 @@ function animeScroll() {
 			element.classList.add(animationClass);
 		}
 
-		console.log(element.offsetTop);
 	})
 }
 
+animeScroll();
+if (target.length){
 window.addEventListener('scroll', function() {
 	animeScroll();
 })
+}
 </script>
 
 </body>
