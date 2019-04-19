@@ -89,6 +89,16 @@ background-repeat:repeat-y;
 float:left;
 }
 
+#site .navColumn .visao-geral
+{
+width:350px;
+padding:5px;
+background-color:#F9FAF5;
+border:dashed 2px;
+border-color:#EAECC7;
+margin-top:10px;
+}
+
 #site .navColumn .link
 {
 width:369px;
@@ -96,9 +106,28 @@ height:65px;
 line-height:65px;
 font:Arial, Helvetica, sans-serif;
 font-size:20px;
-background-image:url(background.png);
+background-image:url(arrow_link_background.png);
 background-repeat:no-repeat;
 padding-left:50px;
+}
+
+#site .navColumn .link:hover
+{
+background-image:url(rollover_back65.png);
+background-repeat:no-repeat;
+}
+
+a
+{
+color:#777B2B;
+text-decoration:none;
+}
+
+a:hover
+{
+color:#CACE73;
+text-decoration:none;
+border-bottom:dotted 1px;
 }
 
 #site .conteudo
@@ -147,7 +176,14 @@ font-weight:bold;
 color:#071027;
 }
 
-
+#bottomContent #navBottom{
+clear:both;
+width:419px;
+height:20px;
+background-image:url(tab_bottom.png);
+background-repeat:no-repeat;
+float:left;
+}
 
 .contentTitle
 {
