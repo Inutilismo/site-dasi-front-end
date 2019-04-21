@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css.css" />
 		<title>Sanitas Tua</title>
 
-		<script>
 
+		<script>
+		/*
+		Começo da função "mostra"
+		Nessa função, uma variável chamada display recebe o atributo
+		display do elemento selecionado pela id passada como parâmetro.
+		A partir disso faz uma checagem: se o atributo estiver com o valor "none",
+		ele muda o valor para "block"(tornando o elemento visível)
+		se o atributo estiver com qualquer outro valor (else), ele recebe o valor "none"
+		(tornando o objeto invisível)
+		*/
 		function mostra(elemento)
 		{
 			var display = document.getElementById(elemento).style.display;
@@ -15,10 +26,22 @@
 			else
 				document.getElementById(elemento).style.display = 'none';
 		}
+		//Fim da função "mostra"
 
 
-
+		/*
+		Começo da função "confirmExit"
+		Nessa função, o navegador recebe o comando de mostrar um alerta
+		ao usuário no momento anterior ao ser fechado.
+		*/
+		window.onbeforeunload = confirmExit;
+		  function confirmExit()
+		  {
+		    return "Tem certeza de que deseja sair da página?";
+		  }
+			//Fim da função "confirmExit"
 		</script>
+
 
 
 	</head>
@@ -62,19 +85,19 @@
 			</form>
   		</div>
 	</div>
-
+	
         <div id="cabecalho">
         	<div class="logo"></div>
-            <h1>Sanitas Tua</h1>
-			<h2>A revista de saúde que se preocupa com você!</h2>
+          <h1>Sanitas Tua</h1>
+					<h2>A revista de saúde que se preocupa com você!</h2>
         </div>
 
 <div id="site">
 
 		<div class="navColumn">
 			<div class="visao-geral">
-        	Nesta matéria trazemos para você, morador de São Paulo, informações muito importantes sobre a febre amarela, doença que está atingindo muitos paulistas e que pode ser evitada por meio de medidas simples.      </div>
-			<div class="link"><a href="#">Início</a></div>
+      Nesta matéria trazemos para você, morador de São Paulo, informações muito importantes sobre a febre amarela, doença que está atingindo muitos paulistas e que pode ser evitada por meio de medidas simples.      </div>
+			<div class="link"><a href=index.html>Início</a></div>
 			<div class="link"><a href="#">Sobre nós</a></div>
 			<div class="link"><a href="#">Notícias</a></div>
 			<div class="link" id="modalAbrir"><a href="#">Fale Conosco</a></div>
@@ -195,7 +218,7 @@
 
 		<!--Começo do rodapé-->
 		<footer class="rodape2">
-		<div class="rodape">
+		<div class="rodape" data-anime="bottom">
 			<p class="logo">Sanitas Tua</p><br />
 
 			<p>
@@ -213,7 +236,7 @@
 			</p><br />
 
 			<p class="links">
-				<a href="#">Início</a>
+				<a href=index.html>Início</a>
 				·
 				<a href="#">Sobre Nós</a>
 				·
@@ -234,6 +257,20 @@
 </div>
 
 <script>
+/*
+Começo da função "animeScroll"
+Inicialmente são criadas 2 variáveis, uma que seria o 'alvo' e
+receberia todos os objetos com a indicação 'data-anime'
+A outra receberia a palavra animate, que futuramente será usada
+para mudar a classe dos 'alvos'
+Definido tal, cria-se uma variável constante que recebe a localização da barra de rolagem
+da página no eixo Y, valor que é usado em uma estrutura condicional
+A estrutura condicional testa se a localização da barra de rlagem da página é a mesma
+do topo do elemento selecionado, e, se verdadeiro, muda a classe do elemento usando a variável
+"animationClass"
+com as classes devidamente estilizadas no css, o efeito é gerado na página conforme o usuário
+rola a página com o scroll
+*/
 const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
@@ -245,13 +282,16 @@ function animeScroll() {
 			element.classList.add(animationClass);
 		}
 
-		console.log(element.offsetTop);
 	})
 }
 
+animeScroll();
+if (target.length){
 window.addEventListener('scroll', function() {
 	animeScroll();
 })
+}
+//fim da função animeScroll
 </script>
 <script type="text/javascript">
 			
