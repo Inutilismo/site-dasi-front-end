@@ -325,36 +325,35 @@ window.addEventListener('scroll', function() {
 <script language="JavaScript" >
 
 function enviardados(){
-  
+    //Quando o usuário digita menos de 8 caracteres no campo nome, aparece uma mensagem de alerta
 if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
 {
 alert( "Preencha o campo NOME corretamente!" );
 document.dados.tx_nome.focus();
 return false;
 }
-  
-  
+  //Quando o usuário não preenche o campo ou não digita "@" ou "." no campo email, aparece uma mensagem de alerta
 if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
 {
 alert( "Preencha o campo E-MAIL corretamente!" );
 document.dados.tx_email.focus();
 return false;
 }
-  
+  //Quando o usuário não preenche o campo mensagem, aparece uma mensagem de alerta
 if (document.dados.tx_mensagem.value=="")
 {
 alert( "Preencha o campo MENSAGEM!" );
 document.dados.tx_mensagem.focus();
 return false;
 }
-  
+  //Quando o usuário preenche o campo mensagem com menos de 50 caracteres, aparece uma mensagem de alerta
 if (document.dados.tx_mensagem.value.length < 50 )
 {
 alert( "É necessario preencher o campo MENSAGEM com mais de 50 caracteres!" );
 document.dados.tx_mensagem.focus();
 return false;
 }
-  
+  //Quando todas as condições são satisfeitas, a função retorna verdadeiro
 return true;
 }
   
