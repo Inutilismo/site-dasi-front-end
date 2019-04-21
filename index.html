@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
-
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css.css" />
 		<title>Sanitas Tua</title>
 
-
 		<script>
-		/*
-		Começo da função "mostra"
-		Nessa função, uma variável chamada display recebe o atributo
-		display do elemento selecionado pela id passada como parâmetro.
-		A partir disso faz uma checagem: se o atributo estiver com o valor "none",
-		ele muda o valor para "block"(tornando o elemento visível)
-		se o atributo estiver com qualquer outro valor (else), ele recebe o valor "none"
-		(tornando o objeto invisível)
-		*/
+
 		function mostra(elemento)
 		{
 			var display = document.getElementById(elemento).style.display;
@@ -26,43 +15,69 @@
 			else
 				document.getElementById(elemento).style.display = 'none';
 		}
-		//Fim da função "mostra"
 
 
-		/*
-		Começo da função "confirmExit"
-		Nessa função, o navegador recebe o comando de mostrar um alerta
-		ao usuário no momento anterior ao ser fechado.
-		*/
-		window.onbeforeunload = confirmExit;
-		  function confirmExit()
-		  {
-		    return "Tem certeza de que deseja sair da página?";
-		  }
-			//Fim da função "confirmExit"
+
 		</script>
-
 
 
 	</head>
 
 <body>
+	<div id="meuModal" class="modal">
+  		<div class="modal-conteudo">
+  			<span class="fechar">&times;</span>
+			<form action="pagina de ação" method="post" name="dados" onSubmit="return enviardados();" >
+			  	<table>
+    				<tr>
+      					<td width="118">Nome completo:</td>
+      					<td width="460">
+        					<input name="tx_nome" type="text" class="formbutton" id="tx_nome" size="52" maxlength="150">
+      					</td>
+    				</tr>
+    				<tr>
+      					<td>E-mail:</td>
+      					<td>
+        					<input name="tx_email" type="text" class="formbutton" id="tx_email" size="52" maxlength="150">
+						</td>
+    				</tr>
+    				<tr>
+      					<td>Mensagem:</td>
+      					<td rowspan="2">
+        					<textarea name="tx_mensagem" class="formbutton" id="tx_mensagem" cols="50" rows="8" input >
+        					</textarea>
+      					</td>
+    				</tr>
+    				<tr>
+      					<td height="85"></td>
+    				</tr>
+    				<tr>
+      					<td height="22"></td>
+      					<td>
+        					<input name="Reset" type="reset" class="formobjects" id="redefinir" value="Redefinir">
+        					<input name="Submit" type="submit"  class="formobjects" id="enviar" value="Enviar">
+      					</td>
+    				</tr>
+  				</table>
+			</form>
+  		</div>
+	</div>
 
         <div id="cabecalho">
         	<div class="logo"></div>
-          <h1>Sanitas Tua</h1>
-					<h2>A revista de saúde que se preocupa com você!</h2>
+            <h1>Sanitas Tua</h1>
+			<h2>A revista de saúde que se preocupa com você!</h2>
         </div>
 
 <div id="site">
 
 		<div class="navColumn">
 			<div class="visao-geral">
-      Nesta matéria trazemos para você, morador de São Paulo, informações muito importantes sobre a febre amarela, doença que está atingindo muitos paulistas e que pode ser evitada por meio de medidas simples.      </div>
-			<div class="link"><a href=index.html>Início</a></div>
+        	Nesta matéria trazemos para você, morador de São Paulo, informações muito importantes sobre a febre amarela, doença que está atingindo muitos paulistas e que pode ser evitada por meio de medidas simples.      </div>
+			<div class="link"><a href="#">Início</a></div>
 			<div class="link"><a href="#">Sobre nós</a></div>
 			<div class="link"><a href="#">Notícias</a></div>
-			<div class="link"><a href="#">Fale Conosco</a></div>
+			<div class="link" id="modalAbrir"><a href="#">Fale Conosco</a></div>
 			<div id="navBottom"></div>
 		</div>
 
@@ -180,7 +195,7 @@
 
 		<!--Começo do rodapé-->
 		<footer class="rodape2">
-		<div class="rodape" data-anime="bottom">
+		<div class="rodape">
 			<p class="logo">Sanitas Tua</p><br />
 
 			<p>
@@ -198,7 +213,7 @@
 			</p><br />
 
 			<p class="links">
-				<a href=index.html>Início</a>
+				<a href="#">Início</a>
 				·
 				<a href="#">Sobre Nós</a>
 				·
@@ -219,20 +234,6 @@
 </div>
 
 <script>
-/*
-Começo da função "animeScroll"
-Inicialmente são criadas 2 variáveis, uma que seria o 'alvo' e
-receberia todos os objetos com a indicação 'data-anime'
-A outra receberia a palavra animate, que futuramente será usada
-para mudar a classe dos 'alvos'
-Definido tal, cria-se uma variável constante que recebe a localização da barra de rolagem
-da página no eixo Y, valor que é usado em uma estrutura condicional
-A estrutura condicional testa se a localização da barra de rlagem da página é a mesma
-do topo do elemento selecionado, e, se verdadeiro, muda a classe do elemento usando a variável
-"animationClass"
-com as classes devidamente estilizadas no css, o efeito é gerado na página conforme o usuário
-rola a página com o scroll
-*/
 const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
@@ -244,16 +245,79 @@ function animeScroll() {
 			element.classList.add(animationClass);
 		}
 
+		console.log(element.offsetTop);
 	})
 }
 
-animeScroll();
-if (target.length){
 window.addEventListener('scroll', function() {
 	animeScroll();
 })
+</script>
+<script type="text/javascript">
+			
+	// Variável para o modal
+	var modal = document.getElementById('meuModal');
+
+	// Variável para o abrir o modal
+	var abrirModal = document.getElementById("modalAbrir");
+
+	// Variável para o <span> elemento que fecha o modal
+	var span = document.getElementsByClassName("fechar")[0];
+
+	// Quando o usuário clica no Fale Conosco, o modal se abre
+	abrirModal.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// Quando o usuário clica no <span> (x), ele se fecha
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// Quando o usuário clica em qualquer lugar fora do modal, ele se fecha
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+   		modal.style.display = "none";
+   		}
+	} 
+</script>
+
+<script language="JavaScript" >
+
+function enviardados(){
+  
+if(document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
+{
+alert( "Preencha o campo NOME corretamente!" );
+document.dados.tx_nome.focus();
+return false;
 }
-//fim da função animeScroll
+  
+  
+if( document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+{
+alert( "Preencha o campo E-MAIL corretamente!" );
+document.dados.tx_email.focus();
+return false;
+}
+  
+if (document.dados.tx_mensagem.value=="")
+{
+alert( "Preencha o campo MENSAGEM!" );
+document.dados.tx_mensagem.focus();
+return false;
+}
+  
+if (document.dados.tx_mensagem.value.length < 50 )
+{
+alert( "É necessario preencher o campo MENSAGEM com mais de 50 caracteres!" );
+document.dados.tx_mensagem.focus();
+return false;
+}
+  
+return true;
+}
+  
 </script>
 
 </body>
